@@ -1,0 +1,38 @@
+.standard-layout {
+  position: relative;
+
+  .text {
+    padding: 50px;
+  }
+}
+
+.standard-background {
+  pointer-events: none;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  height: 100%;
+  left: 0;
+  top: 0;
+
+  > .background-image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-blend-mode: multiply;
+  }
+
+  > .background-overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+}
+
+.home--banner {
+  .content .col {
+    @include media-breakpoint-up(md) {
+      max-width: 60%;
+    }
+  }
+}

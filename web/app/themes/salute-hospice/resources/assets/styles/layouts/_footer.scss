@@ -1,0 +1,212 @@
+.primary-footer {
+  position: relative;
+  flex-shrink: 0;
+
+  &__extended {
+    position: relative;
+    padding: 100px;
+    background-position: center;
+    background-size: cover;
+
+    @include media-breakpoint-down("md") {
+      padding: 100px 15px;
+    }
+
+    .is-background {
+      background: linear-gradient(to right, c(red) 40%, rgba(c(red), 0) 100%);
+    }
+
+    .content {
+      position: relative;
+
+      @include media-breakpoint-up("md") {
+        width: 60%;
+      }
+
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p {
+        color: white;
+      }
+    }
+  }
+
+  &__upper {
+    color: white;
+    padding: 2rem 15rem;
+    background: theme-color("primary"); // fallback
+    background: linear-gradient(rgba(theme-color-level("primary", -5), 1) 0%, rgba(theme-color("primary"), 1) 100%);
+
+    @include media-breakpoint-down(md) {
+      padding: 2rem 3rem;
+      text-align: center;
+    }
+
+    svg {
+      height: 1rem;
+      width: 1rem;
+      margin-right: 0.25rem;
+      fill: c(light-blue);
+    }
+
+    &-content {
+      flex-wrap: wrap;
+      display: flex;
+      justify-content: space-around;
+
+      p {
+        margin: 0;
+      }
+    }
+
+    a:not(.btn):not(.nav-link) {
+      color: white;
+      font-weight: 400;
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      width: 14rem;
+      transform: translateY(-2rem);
+
+      @include media-breakpoint-down(md) {
+        width: 7rem;
+      }
+
+      &:first-child {
+        left: 0;
+      }
+
+      &:last-child {
+        right: 0;
+      }
+    }
+
+    .extra-content {
+      b {
+        color: c(light-blue);
+      }
+    }
+  }
+
+  &__lower {
+    display: flex;
+    justify-content: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    color: theme-color("primary");
+    flex-wrap: wrap;
+
+    > div {
+      position: relative;
+      display: flex;
+      align-items: center;
+
+      &:not(:last-of-type)::after {
+        content: "";
+        height: 1rem;
+        width: 1px;
+        background-color: theme-color("primary");
+        display: inline-block;
+        margin: 0 1rem;
+      }
+    }
+
+    .footer-socials-wrapper {
+      margin-top: 10px;
+      margin-bottom: 20px;
+      width: 100%;
+      justify-content: center;
+
+      @include media-breakpoint-up(md) {
+        width: auto;
+        margin: 0;
+      }
+
+      a {
+        &:not(:last-of-type) {
+          margin-right: 0.5rem;
+        }
+
+        svg {
+          height: 1.3rem;
+          width: 1.3rem;
+          fill: c(light-blue);
+        }
+      }
+    }
+  }
+}
+
+#techyscouts-logo {
+  display: inline-block;
+  fill: theme-color("primary");
+  color: theme-color("primary");
+  height: 1em;
+  width: auto;
+  vertical-align: middle;
+}
+
+.techyscouts-credit-link:hover #techyscouts-logo-heart,
+.techyscouts-credit-link:focus #techyscouts-logo-heart {
+  animation: ts-heart-beat 2s infinite ease-in-out 0.6s;
+}
+
+.techyscouts-credit-link:hover #techyscouts-logo-text,
+.techyscouts-credit-link:focus #techyscouts-logo-text {
+  animation: ts-draw-logo 2s forwards;
+}
+
+.techyscouts-credit-link:hover #techyscouts-logo-line-1,
+.techyscouts-credit-link:hover #techyscouts-logo-line-2,
+.techyscouts-credit-link:focus #techyscouts-logo-line-1,
+.techyscouts-credit-link:focus #techyscouts-logo-line-2 {
+  animation: ts-swoop-down 0.5s forwards ease-out;
+}
+
+.techyscouts-credit-link:hover #techyscouts-logo-line-2,
+.techyscouts-credit-link:focus #techyscouts-logo-line-2 {
+  animation-name: ts-swoop-up;
+}
+
+@keyframes ts-heart-beat {
+  5% {
+    transform: scale(1.1);
+    fill: #c7315f;
+  }
+
+  10% {
+    transform: scale(0.9);
+  }
+
+  15% {
+    transform: scale(1.2);
+    fill: #c7315f;
+  }
+
+  40% {
+    transform: scale(1);
+    stroke-width: 0;
+  }
+}
+
+@keyframes ts-draw-logo {
+  0% {
+    stroke-dasharray: 2600;
+    stroke-dashoffset: 2600;
+  }
+
+  100% { stroke-dashoffset: 0; }
+}
+
+@keyframes ts-swoop-down {
+  0% { transform: translateY(-100%) rotate(10deg); }
+}
+
+@keyframes ts-swoop-up {
+  0% { transform: translateY(100%) rotate(-10deg); }
+}

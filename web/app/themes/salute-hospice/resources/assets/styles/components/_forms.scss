@@ -1,0 +1,172 @@
+/** Search form */
+.search-form {
+  @extend .form-inline;
+}
+
+.search-form label {
+  @extend .form-group;
+
+  font-weight: normal;
+}
+
+.search-form .search-field {
+  @extend .form-control;
+}
+
+.search-form .search-submit {
+  @extend .btn;
+  @extend .btn-secondary;
+}
+
+/**
+* Global form styles
+*/
+input:not([type=radio]),
+textarea {
+  width: 100%;
+  border: theme-color("primary") 1px solid;
+  padding: 0.5rem 1rem;
+}
+
+div[role=form] {
+  background: c(beige);
+  padding: 3rem;
+  margin: auto;
+  max-width: 700px;
+
+  @include media-breakpoint-down(md) {
+    padding: 1rem;
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+}
+
+.wpcf7-radio {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+}
+
+input[type=radio] {
+  margin-right: 1rem;
+}
+
+// for equal spacing of radio buttons
+.RECOMMEND_OPTIONS .wpcf7-list-item {
+  &:nth-child(3),
+  &:nth-child(4) {
+    visibility: hidden;
+  }
+}
+
+.wpcf7-checkbox {
+  display: block;
+  margin-top: 1rem;
+
+  // hide default checkbox
+  input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  .wpcf7-list-item {
+    position: relative;
+
+    &:first-of-type {
+      margin-left: 0;
+    }
+
+    label {
+      padding-left: 30px;
+
+      input:checked {
+        & ~ .wpcf7-list-item-label {
+          &::before {
+            //
+          }
+
+          // checkmark icon once checked
+          &::after {
+            left: 10px;
+            top: 10px;
+            width: 5px;
+            height: 10px;
+            border: solid theme-color("primary");
+            border-width: 0 3px 3px 0;
+            transform: rotate(45deg);
+          }
+        }
+      }
+
+      .wpcf7-list-item-label {
+        &::before {
+          content: "";
+          position: absolute;
+          top: 3px;
+          left: 0;
+          height: 25px;
+          width: 25px;
+          background-color: white;
+          border: 1px solid theme-color("primary");
+        }
+
+        // checkmark icon
+        &::after {
+          position: absolute;
+          // display: none;
+        }
+      }
+
+      &:hover {
+        &::before {
+          background-color: red;
+        }
+      }
+    }
+  }
+}
+
+.file-input {
+  display: flex;
+  align-items: center;
+
+  input#file {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+  }
+
+  .selected-file {
+    @extend input;
+
+    flex-grow: 1;
+    width: auto !important;
+    background-color: white;
+  }
+
+  label[for="file"] {
+    margin: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+    margin-left: 30px;
+  }
+}
+
+.form-title-sm {
+  color: theme-color("primary");
+  font-weight: 700;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}

@@ -1,0 +1,33 @@
+// see _variables.scss for more custom button styles
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: none;
+}
+
+.btn {
+  &--primary {
+    background: c(light-blue);
+
+    &:hover {
+      background: c(red);
+      color: white;
+    }
+  }
+
+  &--secondary {
+    background: c(light-blue);
+
+    &:hover {
+      border-color: white;
+      background: transparent;
+      color: white;
+    }
+  }
+}
+
+a:not(.btn):not(.nav-link) {
+  font-weight: 700;
+  color: c(light-blue);
+}

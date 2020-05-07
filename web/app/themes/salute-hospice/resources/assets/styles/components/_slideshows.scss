@@ -1,0 +1,19 @@
+[class^=control] {
+  z-index: 1;
+  height: 100%;
+  padding: 10px;
+  background-color: white;
+  opacity: 0.5;
+  color: black;
+  align-self: center;
+}
+
+.control-prev {
+  left: 0;
+  text-align: right;
+  justify-content: flex-end;
+}
+
+.control-next {
+  //
+}

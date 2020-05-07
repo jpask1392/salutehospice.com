@@ -1,0 +1,26 @@
+{
+  "entry": {
+    "main": [
+      "./scripts/main.js",
+      "./styles/main.scss"
+    ],
+    "customizer": [
+      "./scripts/customizer.js"
+    ],
+    "admin": [
+      "./styles/admin.scss"
+    ],
+    "login": [
+      "./styles/login.scss"
+    ]
+  },
+  "publicPath": "/wp-content/themes/salute-hospice",
+  "devUrl": "http://salutehospice.local",
+  "proxyUrl": "http://localhost:3000",
+  "cacheBusting": "[name]_[hash:8]",
+  "watch": [
+    "app/**/*.php",
+    "config/**/*.php",
+    "resources/views/**/*.php"
+  ]
+}

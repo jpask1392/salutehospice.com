@@ -1,0 +1,59 @@
+.accordion {
+  @extend .col-12;
+
+  width: 100%;
+
+  .accordion-card {
+    margin-bottom: 1.5rem;
+
+    .card-header {
+      border: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      background: theme-color("primary");
+      color: white;
+      border-radius: 0;
+
+      &:not(.collapsed) .expand-symbol span {
+        transform: rotate(225deg);
+      }
+
+      .expand-symbol {
+        span {
+          height: 10px;
+          width: 10px;
+          display: block;
+          transform: rotate(45deg);
+          border: solid;
+          border-width: 0 1px 1px 0;
+          transition: all 0.3s;
+        }
+      }
+
+      .card-title {
+        color: white;
+        margin: 0;
+      }
+
+      i {
+        transition: all 0.3s;
+        color: theme-color("primary");
+      }
+
+      i.active {
+        transform: rotateX(180deg);
+      }
+    }
+
+    .card-body {
+      background: c(beige);
+    }
+
+    & h5 button {
+      color: white;
+    }
+  }
+}
+

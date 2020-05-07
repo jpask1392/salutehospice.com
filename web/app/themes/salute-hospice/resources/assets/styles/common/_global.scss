@@ -1,0 +1,172 @@
+.wrap {
+  margin-top: -80px;
+}
+
+/**
+* Text
+*/
+h2,
+h3,
+h4,
+h5 {
+  & + p {
+    margin-top: 2em;
+  }
+}
+
+h3,
+h4,
+h5 {
+  color: #444;
+}
+
+footer,
+section:not(.titles--no-hearts),
+.hero-slideshow {
+  h1,
+  h2 {
+    &.icon--lg::before {
+      content: url("../images/heart-logo.png");
+    }
+
+    &::before {
+      content: url("../images/heart-logo-sm.png");
+      display: block;
+      width: 100%;
+      text-align: inherit;
+      // animation: pulse 1s infinite;
+    }
+  }
+
+  .no-hearts::before {
+    content: none;
+  }
+}
+
+// @keyframes pulse {
+//   0% {
+//     transform: scale(0.95);
+//   }
+
+//   70% {
+//     transform: scale(1);
+//   }
+
+//   100% {
+//     transform: scale(0.95);
+//   }
+// }
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/**
+* Colors
+*/
+// solid background colors
+@for $i from 1 through length($colors) {
+  $named-colors: map-keys($colors);
+  $color-name: nth($named-colors, $i);
+
+  &.bg-#{$color-name} {
+    background-color: c($color-name);
+  }
+}
+
+// gradient background colors
+@for $i from 1 through length($colors) {
+  $named-colors: map-keys($colors);
+  $color-name: nth($named-colors, $i);
+
+  &.bg-gradient-#{$color-name} {
+    background: linear-gradient(90deg, rgba(c($color-name), 1) 0%, rgba(c($color-name), 0) 100%);
+  }
+}
+
+/**
+* Lists
+*/
+.heart-list {
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+
+    li {
+      position: relative;
+      padding-left: 2rem;
+
+      &::before {
+        content: url("data:image/svg+xml;utf8, <svg viewBox='0 0 25 22' preserveAspectRatio='xMidYMin' xmlns='http://www.w3.org/2000/svg'><path d='M20.7305 2.38175C19.4481 1.4071 17.8003 0.985272 16.0903 1.19407C14.8121 1.35015 13.6858 1.85538 12.7425 2.69567C12.2665 3.11979 11.8492 3.61854 11.4967 4.18424C11.0186 3.72012 10.4933 3.33631 9.92914 3.03919C8.81154 2.45056 7.59672 2.23119 6.31853 2.38727C4.60852 2.59607 3.11049 3.40202 2.10033 4.6566C1.10228 5.89648 0.662144 7.4776 0.861329 9.10885C1.06634 10.7878 1.95189 12.2395 3.64815 13.6775C5.16556 14.9638 6.9361 16.109 9.37506 17.541C10.2079 18.0301 11.0016 18.5388 11.9839 19.1321C12.2435 19.2892 13.0577 19.8543 13.3729 19.8158C13.688 19.7773 14.3946 18.9319 14.6085 18.7173C15.4192 17.9049 16.2047 17.2498 16.8956 16.5743C18.9181 14.5979 20.2358 13.1236 21.3991 11.5099C22.6995 9.7061 23.2096 8.08401 23.0045 6.40489C22.8054 4.77378 21.9977 3.34503 20.7305 2.38175Z'/></svg>");
+        position: absolute;
+        left: 0;
+        top: 0.5rem;
+        height: 1rem;
+        width: 1rem;
+      }
+
+      &:not(:last-of-type) {
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+}
+
+/**
+* Layouts
+*/
+.container--narrow {
+  max-width: 900px;
+  margin: auto;
+}
+
+.container--wide {
+  max-width: 1360px;
+  margin: auto;
+}
+
+.is-background {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  height: 100%;
+}
+
+.custom-logo-link img {
+  height: 60px;
+  width: auto;
+}
+
+.company-number {
+  a:not(:last-of-type) {
+    position: relative;
+    padding-right: 10px;
+    margin-right: 10px;
+
+    &::after {
+      content: "";
+      width: 1px;
+      background: white;
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
+  }
+}
+
+.heart-background {
+  &--sgl {
+    background-size: 300px !important;
+    background-repeat: no-repeat !important;
+    background-position: center 100px !important;
+  }
+}

@@ -1,0 +1,51 @@
+/** Import Bootstrap functions */
+@import "~bootstrap/scss/functions";
+
+$theme-colors: (
+  primary: #006bbb,
+);
+
+/**
+* Custom Variables
+*/
+$navbar-bp: lg;
+
+/**
+* Bootstrap Variables
+*/
+// Buttons
+$btn-border-radius:       0;
+$btn-padding-y:           0.75rem;
+$btn-padding-x:           2rem;
+$btn-border-width:        2px;
+
+// Typography
+$font-size-base:          1rem; // this changes the font-size throughout bootstrap
+$font-family-sans-serif:  "Open Sans", sans-serif;
+$line-height-base:        2;
+$headings-font-family:    "oxygen", sans-serif;
+$headings-font-weight:    700;
+$headings-line-height:    1.2;
+$headings-color:          theme-color("primary");
+$text-color:              #444;
+
+// Fonts
+$h1-font-size:            $font-size-base * 2.5 !default;
+$h2-font-size:            $font-size-base * 2 !default;
+$h3-font-size:            $font-size-base * 1.75 !default;
+$h4-font-size:            $font-size-base * 1.5 !default;
+$h5-font-size:            $font-size-base * 1.25 !default;
+$h6-font-size:            $font-size-base !default;
+
+$colors: (
+  body-bg: #fff,
+  font-color: #444,
+  beige: #ede7dc,
+  red: #e84a56,
+  light-blue: #67e1ff,
+  mid-blue: #7fc8fe
+);
+
+@function c($color) {
+  @return map-get($colors, $color);
+}

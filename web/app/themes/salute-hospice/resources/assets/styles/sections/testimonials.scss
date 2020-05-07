@@ -1,0 +1,42 @@
+.testimonials-section {
+  position: relative;
+
+  .content {
+    position: relative;
+  }
+
+  .review-card {
+    height: 100%;
+
+    &--style-1 {
+      .review-meta {
+        margin-bottom: 1.5rem;
+
+        .review-user-title {
+          color: theme-color("primary");
+        }
+
+        .star-rating {
+          color: c(red);
+        }
+      }
+    }
+
+    &--style-2 {
+      background-color: c(red);
+      padding: 2rem;
+      color: white;
+
+      .quote-marks {
+        width: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .review-meta {
+        text-align: right;
+        font-weight: 700;
+        margin-top: 1rem;
+      }
+    }
+  }
+}
