@@ -114,7 +114,7 @@ add_filter('login_headerurl', function () {
 });
 
 /**
- * ADd custom colors to tinymce
+ * Add custom colors to tinymce
  */
 add_filter('tiny_mce_before_init', function ($init) {
   $default_colours = '"000000", "Black"';

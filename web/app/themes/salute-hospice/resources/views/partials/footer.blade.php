@@ -1,5 +1,7 @@
 <footer class="content-info primary-footer">
 
+  
+
   @if (!empty(get_field('footer_content')))
   <div class="primary-footer__extended" style="background-image: url('{{ get_field('footer_background_image')['url'] }}')">
     <div class="is-background"></div>
@@ -33,16 +35,18 @@
           {!! do_shortcode('[icon value="techyscouts"]') !!}
         </a>
       </div>
-      <div class="footer-socials-wrapper d-flex">
-        @if (have_rows('socials', 'options')) 
+      @if (have_rows('socials', 'options')) 
+        <div class="footer-socials-wrapper d-flex">
           @while (have_rows('socials', 'options')) @php the_row() @endphp
           @php $link = get_sub_field('social_profile_link') @endphp
+          @if(!empty($link))
           <a href="{{$link['url']}}" target="{{$link['target']}}">
             {!! do_shortcode('[icon value="' . get_sub_field('social_icon_name') . '"]') !!}
           </a>
+          @endif
           @endwhile
-        @endif
-      </div>
+        </div>
+      @endif
     
   </nav>
    
